@@ -10,11 +10,10 @@ import pyrogram
 from pyrogram import filters, Client
 
 
-@client.on_message(
-    filters.command(['id'],prefixes=['/', '!'])
+@client.on(events.NewMessage(pattern="^/id$"))
     & (filters.group | filters.private)
     & ~ filters.edited)
-async def get_ids(client, message):
+async def id(event):
       if message.reply_to_message:
          chat = message.reply_to_message.from_user.id
          file_id = None
