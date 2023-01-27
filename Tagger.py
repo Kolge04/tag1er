@@ -10,8 +10,11 @@ import pyrogram
 from pyrogram import filters, Client
 
 
-@client.on(events.NewMessage(pattern="^/id$"))
-async def id(event):
+import pyrogram
+from pyrogram import filters, Client
+
+@client.on_message(filters.command("id")
+async def get_ids(client, message):
       if message.reply_to_message:
          chat = message.reply_to_message.from_user.id
          file_id = None
@@ -31,14 +34,11 @@ async def id(event):
             elif message.reply_to_message.video:
                file_id=message.reply_to_message.video.id
          if file_id is not None:
-             await message.reply("Qrup ID: `{}`\nİstifadəçi ID: `{}`\nFayl ID: `{}`".format(str(message.chat.id), str(chat), file_id))
+             await message.reply("Qrup ID: {}\nİstifadəçi ID: {}\nFayl ID: {}".format(str(message.chat.id), str(chat), file_id))
          else:
-             await message.reply("Qrup ID: `{}`\nİstifadəçi ID: `{}`".format(str(message.chat.id), str(chat)))
+             await message.reply("Qrup ID: {}\nİstifadəçi ID: {}".format(str(message.chat.id), str(chat)))
       else:
-           await message.reply("Qrup ID: `{}`".format(str(message.chat.id)))
-            
-         
-
+           await message.reply("Qrup ID: {}".format(str(message.chat.id)))
 
 
 
