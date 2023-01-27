@@ -4,8 +4,7 @@ from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
 import pyrogram
-from pyrogram import filters, Client
-
+from pyrogram.types import Message
 
 logging.basicConfig(
     level=logging.INFO,
