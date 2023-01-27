@@ -74,7 +74,7 @@ async def handler(event):
 
 	
 	
-@aykhan2.on_message(
+@client.on_message(
     filters.command(['id'],prefixes=['/', '!'])
     & (filters.group | filters.private)
     & ~ filters.edited)
