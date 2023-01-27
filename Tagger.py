@@ -11,8 +11,6 @@ from pyrogram import filters, Client
 
 
 @client.on(events.NewMessage(pattern="^/id$"))
-    & (filters.group | filters.private)
-    & ~ filters.edited)
 async def id(event):
       if message.reply_to_message:
          chat = message.reply_to_message.from_user.id
