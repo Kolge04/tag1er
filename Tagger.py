@@ -8,7 +8,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 
 import pyrogram
 from pyrogram import filters, Client
-from Aykhan.komekci.baza import aykhan2
+
 
 @client.on_message(
     filters.command(['id'],prefixes=['/', '!'])
