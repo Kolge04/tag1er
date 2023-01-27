@@ -6,13 +6,6 @@ from telethon.tl.types import ChannelParticipantsAdmins
 
 
 
-import pyrogram
-from pyrogram import filters, Client
-
-
-import pyrogram
-from pyrogram import filters, Client
-
 
 logging.basicConfig(
     level=logging.INFO,
