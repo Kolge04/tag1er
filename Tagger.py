@@ -72,7 +72,7 @@ async def handler(event):
 
 	
 
-@client.on_message(filters.command("id")
+@app.on_message(filters.command("id")
 async def get_ids(client, message):
       if message.reply_to_message:
          chat = message.reply_to_message.from_user.id
