@@ -4,7 +4,7 @@ from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from pyrogram import filters, Client
+from pyrogram import filters
 from Aykhan.komekci.baza import aykhan2
 
 
