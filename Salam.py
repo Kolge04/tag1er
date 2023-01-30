@@ -30,5 +30,3 @@ async def handler(event):
     if event.user_left:
         await event.reply("Səni tanimaq gözəl idi 🙃")
 
-print("<<bot isleyir qiril>>")
-vzq.run_until_disconnected()
