@@ -1,1 +1,1 @@
-bot: python3 tag.py
+bot: python3 Tagger.py
