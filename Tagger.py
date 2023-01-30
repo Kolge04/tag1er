@@ -22,13 +22,13 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 anlik_calisan = []
 
 tekli_calisan = []
-ad = f"[{user.first_name}](tg://user?id={user.id})"
+
 
 # BAŞLANĞIC BUTONU
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("**⚡ ғ ʟ ᴀ s ʜ _ ᴛ ᴀ ɢ ɢ ᴇ ʀ\n**İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm\nƏmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun {ad}**",
+  await event.reply("**⚡ ғ ʟ ᴀ s ʜ _ ᴛ ᴀ ɢ ɢ ᴇ ʀ\n**İlə Qrupunuzdakı Üyələri Etiket Edə Bilərəm\nƏmrlərlə Tanış Olmaq Üçün __ƏMRLƏR__ Butonuna Toxun **",
                     buttons=(
                    
 		      [Button.url('➕ Botu Qrupa Al ➕', 'https://t.me/Flashtaggerbot?startgroup=a')],
