@@ -1,1 +1,1 @@
-bot: python3 Kolge.py
+bot: python3 tag.py
