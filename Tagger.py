@@ -22,7 +22,7 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 anlik_calisan = []
 
 tekli_calisan = []
-ad = f"[{usr.first_name}](tg://user?id={usr.id})"
+ad = f"[{user.first_name}](tg://user?id={usr.id})"
 
 # BAŞLANĞIC BUTONU
 
