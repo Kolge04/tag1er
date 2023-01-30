@@ -70,8 +70,16 @@ async def handler(event):
                     link_preview=False)
                    
 	
+@client.on(events.ChatAction)
+async def handler(event):
+    if event.user_joined:
+        await event.reply("Aramıza Xoş gəldin 😍")
 
-	
+@client.on(events.ChatAction)
+async def handler(event):
+    if event.user_left:
+        await event.reply("Səni tanimaq gözəl idi 🙃")
+
 
 
 	
