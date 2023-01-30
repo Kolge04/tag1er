@@ -1,14 +1,24 @@
-from telethon import TelegramClient
-from telethon import events
+import random, os, logging, asyncio
+from telethon import Button
+from telethon import TelegramClient, events
+from telethon.sessions import StringSession
+from telethon.tl.types import ChannelParticipantsAdmins
 
 
 
-API_ID = "12210813"
-API_HASH = "e42eeae11a2f96bcfc5ec3b46a30adad"
-bot_token = "5631477617:AAFrf8wg07Anl5MpmZj3LMPCEZkJw966hCM"
 
-ged = "reddol"
-app = TelegramClient('app', API_ID, API_HASH).start(bot_token=bot_token)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(name)s - [%(levelname)s] - %(message)s'
+)
+LOGGER = logging.getLogger(__name__)
+
+api_id = int(os.environ.get("APP_ID"))
+api_hash = os.environ.get("API_HASH")
+bot_token = os.environ.get("TOKEN")
+kolge = TelegramClient('kolge', api_id, api_hash).start(bot_token=bot_token)
+
+
 
 @app.on(events.ChatAction)
 async def handler(event):
