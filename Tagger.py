@@ -1,9 +1,8 @@
-import random, os, logging, asyncio
+import random, os, logging, asyncio, requests
 from telethon import Button
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
-import requests
 
 
 logging.basicConfig(
