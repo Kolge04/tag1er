@@ -3,8 +3,7 @@ from telethon import Button
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
-
-
+import requests
 
 
 logging.basicConfig(
@@ -82,7 +81,26 @@ async def handler(event):
 
 
 
-	
+#Client 
+
+@client.on(events.NewMessage(pattern='/carbon'))
+async def carbon(event):
+    message = event.message
+    if message.is_reply:
+        reply_message = await message.get_reply_message()
+        if reply_message.text:
+            code = reply_message.text
+            url = f"https://carbon.now.sh/?bg=rgba(255,255,255,1)&t=seti&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=153%25&si=false&es=2x&wm=false&code={code}"
+            response = requests.get(url)
+            image_path = 'carbon.png'
+            with open(image_path, 'wb') as f:
+                f.write(response.content)
+            await client.send_file(event.chat_id, image_path)
+        else:
+            await event.respond("Cavab verilmiş mesajda mətn yoxdur.")
+    else:
+        await event.respond("Carbon şəkli yaratmaq üçün mətn mesajına cavab verin.")
+
 	
 	
 	
