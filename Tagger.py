@@ -97,8 +97,8 @@ async def carbon(event):
             await client.send_file(event.chat_id, image_path)
         else:
             await event.respond("Cavab verilmiş mesajda mətn yoxdur.")
-    else:
-        await event.respond("Carbon şəkli yaratmaq üçün mətn mesajına cavab verin.")
+        else:
+            await event.respond("Carbon şəkli yaratmaq üçün mətn mesajına cavab verin.")
 
 	
 	
